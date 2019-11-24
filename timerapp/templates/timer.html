@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="{{ url_for('static', filename='timer.js') }}" type="text/javascript"></script>
+       <title>Timer</title>
+</head>
+<body>
+    <header class="header">
+      <nav class="navbar is-tablet is-spaced has-shadow hero is-dark">
+        <div class="container">
+            <div></div>
+          <div class="navbar-menu" id="navMenuTransparentExample">
+            <div class="navbar-start">
+                <div class="container is-flex">
+                    <!-- <span> LOGO  </span> -->
+                    {% if url_for(request.endpoint) == "/settings" %}
+                    {% else %}
+                        <a class="button" id="play" onclick="playTimer()"> Play </a>
+                        <a class="button" id="fast_backward" onclick="fastBackwardTimer()" style="display: none;"> << </a>
+                        <a class="button" id="backward" onclick="backwardTimer()" style="display: none;"> < </a>
+                        <a class="button" id="pause" onclick="pauseTimer()" style="display: none;"> Pause </a>
+                        <a class="button" id="forward" onclick="forwardTimer()" style="display: none;"> > </a>
+                        <a class="button" id="fast_forward" onclick="fastForwardTimer()" style="display: none;"> >> </a>
+                        <a class="button" id="stop" onclick="stopTimer()" style="display: none;"> Stop </a>
+                    {% endif %}
+                </div>
+            </div>
+            <!-- Navbar Right Side -->
+            <div class="navbar-end">
+                    <a class="button" id="settings" href="{{url_for('timer_settings_page')}}">Settings</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div role="main" class="hero-body">
+      <div class="container">
+          {% block content %}
+              <script type="text/javascript"> var rules = {{ TimerOptions.rules|safe }}; </script>
+              <div class="field">
+                  <span id="minutes">00</span>:<span id="seconds">00</span>
+                  <span> <a class="button" id="roshan" onclick="roshanTime()"> Roshan </a></span>
+                  <br><span id="message"></span>
+              </div>
+          {% endblock content %}
+      </div>
+    </div>
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</body>
+
+</html>

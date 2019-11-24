@@ -1,0 +1,168 @@
+{% extends "timer.html" %}
+{% block content %}
+    <div class="box">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <div>
+                <h1 class="title has-text-centered">Opções:</h1>
+                <div class="columns is-centered">
+                    <div class="column has-text-centered"></div>
+                    <div class="column has-text-centered">
+                        <label class="label"> Alertar? </label>
+                    </div>
+                    <div class="column has-text-centered">
+                        <label class="label"> Alertar com Antecedencia? </label>
+                    </div>
+                    <div class="column has-text-centered">
+                        <label class="label"> Tocar Som? </label>
+                    </div>
+                </div>
+                <div class="columns is-centered">
+                    <div class="column has-text-right">
+                        <div class="label"> Bounty Rune </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="field">
+                            {{ form.bounty_warn(class="checkbox", type="checkbox", value=TimerOptions.bounty_warn[0]) }}
+                        </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="field is-small">
+                            {{ form.bounty_pre_time(class="input", type="text", value=TimerOptions.bounty_warn[1]) }}
+                        </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="field">
+                        {{ form.bounty_sound(class="checkbox", type="checkbox", value=TimerOptions.bounty_warn[2]) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="columns is-centered">
+                    <div class="column has-text-right">
+                        <div class="label"> Power Rune </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="field">
+                            {{ form.power_rune_warn(class="checkbox", type="checkbox") }}
+                        </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="field is-small">
+                            {{ form.power_rune_pre_time(class="input", type="text") }}
+                        </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="field">
+                            {{ form.power_rune_sound(class="checkbox", type="checkbox") }}
+                        </div>
+                    </div>
+                </div>
+                <div class="columns is-centered">
+                    <div class="column has-text-right">
+                        <div class="label"> Double Power Rune </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="field">
+                            {{ form.double_power_rune_warn(class="checkbox", type="checkbox") }}
+                        </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="field is-small">
+                            {{ form.double_power_rune_pre_time(class="input", type="text") }}
+                        </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="field">
+                            {{ form.double_power_rune_sound(class="checkbox", type="checkbox") }}
+                        </div>
+                    </div>
+                </div>
+                <div class="columns is-centered">
+                    <div class="column has-text-right">
+                        <div class="label"> Day/Night Change </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="field">
+                            {{ form.day_night_warn(class="checkbox", type="checkbox") }}
+                        </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="field is-small">
+                            {{ form.day_night_pre_time(class="input", type="text") }}
+                        </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="field">
+                        {{ form.day_night_sound(class="checkbox", type="checkbox") }}
+                        </div>
+                    </div>
+                </div>
+                <div class="columns is-centered">
+                    <div class="column has-text-right">
+                        <div class="label"> Catapult Wave </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="field">
+                            {{ form.catapult_wave_warn(class="checkbox", type="checkbox") }}
+                        </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="field is-small">
+                            {{ form.catapult_wave_pre_time(class="input", type="text") }}
+                        </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="field">
+                        {{ form.catapult_wave_sound(class="checkbox", type="checkbox") }}
+                        </div>
+                    </div>
+                </div>
+                <div class="columns is-centered">
+                    <div class="column has-text-right">
+                        <div class="label"> Creep Wave Number</div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="field">
+                            {{ form.creep_wave_number_warn(class="checkbox", type="checkbox") }}
+                        </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="field is-small">
+                            {{ form.creep_wave_number_pre_time(class="input", type="text") }}
+                        </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="field">
+                        {{ form.creep_wave_number_sound(class="checkbox", type="checkbox") }}
+                        </div>
+                    </div>
+                </div>
+                <div class="columns is-centered">
+                    <div class="column has-text-right">
+                        <div class="label"> Creep Wave Power</div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="field">
+                            {{ form.creep_wave_power_warn(class="checkbox", type="checkbox") }}
+                        </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="field is-small">
+                            {{ form.creep_wave_power_pre_time(class="input", type="text") }}
+                        </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="field">
+                        {{ form.creep_wave_power_sound(class="checkbox", type="checkbox") }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="field has-text-centered">
+                {{ form.submit(class="button is-dark is-large", type="submit") }}
+            </div>
+        </form>
+    </div>
+{% endblock content %}
