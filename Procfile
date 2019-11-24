@@ -1,1 +1,1 @@
-web gunicorn dotatimer:app
+web gunicorn run:app
