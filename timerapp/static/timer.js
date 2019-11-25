@@ -101,7 +101,7 @@ function roshanTime() {
     var rosh_respawn_init = rosh_kill_time + 480;
     var rosh_respawn_end = rosh_kill_time + 660;
 
-    rules.rules.psuh({"time": rosh_kill_time + 2 , "message": "Roshan has been Killed!"});
+    rules.rules.push({"time": rosh_kill_time + 2 , "message": "Roshan has been Killed!"});
     rules.rules.push({"time": rosh_kill_time + 2 , "message": "Aegis will be claimed at: " + formatTime(aegis_claim)});
     rules.rules.push({"time": rosh_kill_time + 2 , "message": "Roshan will respawn between " + formatTime(rosh_respawn_init) + " and " + formatTime(rosh_respawn_end)});
     rules.rules.push({"time": aegis_claim , "message": "Aegis expired"});
