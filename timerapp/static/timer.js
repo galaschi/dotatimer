@@ -25,6 +25,7 @@ function resetTimer() {
     time.sec = -120;
     document.getElementById("seconds").innerHTML='00';
     document.getElementById("minutes").innerHTML='00';
+    document.getElementById("message").innerHTML='';
     timer = null;
 }
 
